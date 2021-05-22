@@ -1,7 +1,11 @@
 {
   "name": "diploma-spa",
+  "author": "Sofia Davidova",
   "version": "0.1.0",
   "private": true,
+  "devDependencies": {
+    "prettier": "2.3.0"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
