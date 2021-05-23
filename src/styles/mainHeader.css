@@ -1,0 +1,108 @@
+.header__inner {
+  padding: 20px 30px 50px 30px;
+  background-color: #011d50;
+  box-sizing: border-box;
+  border-bottom: 2px solid silver;
+  background-image: url('../assets/imgs/Group 5.svg');
+  text-shadow: 1px 1px 5px #5275f5;
+}
+.header__top {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.header__logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.header__logo img {
+  height: 200px;
+  padding: 0 80px 30px 80px;
+}
+.header__personalAccount {
+  display: flex;
+}
+.header__personalAccountText {
+  margin-right: 24px;
+  align-self: center;
+  color: white;
+  font-size: 1.3em;
+  letter-spacing: 1.52px;
+}
+
+.header__personalAccountText:hover {
+  cursor: pointer;
+  color: #01ce51;
+}
+
+.header__enterBtnStart {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  outline: none;
+  background: #002eb3;
+  border: 2px solid #002eb3;
+  box-shadow: 1px 1px 10px 5px #0a77f5;
+}
+
+.header__enterBtnStart:hover {
+  background: #1c992f;
+  border: 2px solid #578f05;
+  box-shadow: 1px 1px 10px 1px #44b703;
+}
+
+.start-home {
+  display: flex;
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: 2.3em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 105px 100px 95px 100px;
+  z-index: 1;
+}
+.main__button {
+  display: flex;
+  justify-content: center;
+}
+.main__buttonStartLearn {
+  width: 300px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 16px;
+  background: #002eb3;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 2px solid #002eb3;
+  box-shadow: 1px 1px 10px 1px #0a77f5;
+  margin-top: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.main__buttonStartLearn:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+  background: #1c992f;
+  border: 2px solid #578f05;
+  box-shadow: 1px 1px 10px 1px #44b703;
+}
+
+@media (min-width: 320px) and (max-width: 1390px) {
+  .header__logo img {
+    height: 100px;
+    padding: 0 80px 30px 80px;
+  }
+  .start-home {
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+  }
+}

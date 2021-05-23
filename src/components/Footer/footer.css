@@ -1,0 +1,134 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  background: #051648;
+  border-top: 1px solid #a1c3ff;
+  color: white;
+  text-shadow: 1px 1px 15px #5275f5;
+  padding: 20px 30px;
+}
+.footer-content {
+  display: flex;
+  flex-direction: row;
+}
+.footer-title {
+  padding-bottom: 20px;
+  font-size: 2em;
+}
+.footer-text {
+  padding-bottom: 20px;
+  font-size: 20px;
+}
+.footer-contacts {
+  width: 50%;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.footer-contacts-buttons {
+  align-self: center;
+}
+.form-btn {
+  display: flex;
+  justify-content: center;
+}
+.form-button {
+  width: 250px;
+  height: 45px;
+  border-radius: 16px;
+  background: #002eb3;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 2px solid #002eb3;
+  box-shadow: 1px 1px 10px 1px #0a77f5;
+  cursor: pointer;
+}
+.form-button:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+  background: #1c992f;
+  border: 2px solid #578f05;
+  box-shadow: 1px 1px 10px 1px #44b703;
+}
+.footer-message-button {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  border: none;
+  outline: none;
+  margin-right: 16px;
+  border-radius: 12px;
+}
+.footer-message-button:hover {
+  filter: contrast(200%);
+}
+.form-item {
+  padding-bottom: 20px;
+}
+.form-input {
+  box-sizing: border-box;
+  padding: 5px 15px;
+  width: 250px;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 1px 1px 10px 1px #0a77f5;
+  font-size: 18px;
+  outline: none;
+}
+.form-input:focus {
+  transition: 0.5s;
+  transform: scale(1.1);
+  border: 2px solid #578f05;
+  box-shadow: 1px 1px 10px 1px #44b703;
+}
+.footer-question {
+  width: 50%;
+  text-align: center;
+}
+textarea {
+  box-sizing: border-box;
+  width: 250px;
+  padding: 10px 15px;
+  border-radius: 16px;
+  font-size: 18px;
+  line-height: 1.5;
+  border: 2px solid #002eb3;
+  box-shadow: 1px 1px 10px 1px #0a77f5;
+  resize: none;
+  outline: none;
+}
+textarea:focus {
+  transition: 0.5s;
+  transform: scale(1.1);
+  border: 2px solid #578f05;
+  box-shadow: 1px 1px 10px 1px #44b703;
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+  .footer-contacts {
+    width: 100%;
+  }
+  .footer-question {
+    padding-top: 20px;
+    width: 100%;
+  }
+}
+@media (min-width: 769px) and (max-width: 2540px) {
+  .footer-contacts:after {
+    content: '';
+    position: absolute;
+    border-right: 2px solid white;
+    width: 4px;
+    height: 440px;
+    top: 0;
+    right: 0;
+  }
+}
