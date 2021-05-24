@@ -1,0 +1,45 @@
+.header__innerAccount {
+  padding: 20px 30px;
+  background-color: #011d50;
+  box-sizing: border-box;
+  border-bottom: 2px solid silver;
+  text-shadow: 1px 1px 5px #5275f5;
+}
+
+.header__Account {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header__logoAccount {
+  flex-grow: 1;
+}
+
+.header__logoImg {
+  height: 50px;
+}
+.header__logoImg:hover {
+  opacity: 0.7;
+}
+
+.header__personalAccountTitle {
+  padding-right: 20px;
+  color: white;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+}
+
+.header__enterBtn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  outline: none;
+  background: #002eb3;
+  border: 1px solid #ffffff;
+}
+.header__enterBtn:hover {
+  background: #1c992f;
+  border: 2px solid #578f05;
+  box-shadow: 1px 1px 10px 1px #44b703;
+}

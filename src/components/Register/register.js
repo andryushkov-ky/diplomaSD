@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import './register.css';
 
-export const Register = () => {
+export const Register = ({ setUser }) => {
   const [isRegister, setIsRegister] = useState(false);
 
   const toggleRegister = () => {
@@ -60,9 +60,18 @@ export const Register = () => {
                   onSubmit={(values, { setSubmitting }) => {
                     console.error('VALUES', values);
 
-                    axios.post(`/api/createUser`, values).then(response => {
-                      console.log('RESP', response.data);
-                    });
+                    axios
+                      .post(`/api/createUser`, values)
+                      .then(response => {
+                        console.log('RESP', response.data);
+                        const user = response.data;
+                        if (user) {
+                          setUser(user);
+                        }
+                      })
+                      .finally(() => {
+                        setIsRegister(false);
+                      });
                   }}
                 >
                   {({ isSubmitting }) => (

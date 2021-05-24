@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import group2people from '../../assets/imgs/Group 2people.svg';
 import group1 from '../../assets/imgs/Group 1.svg';
 import group2 from '../../assets/imgs/Group 2.svg';
@@ -9,21 +10,58 @@ import './main.css';
 import { Slider } from '../Slider/slider';
 import { Register } from '../Register/register';
 import { Auth } from '../Auth/auth';
+import { AskForLoginPopup } from '../AskForLoginPopup/askForLoginPopup';
 
 export const Home = () => {
+  const [user, setUser] = useState(null);
+  const [isShowAskPopup, setIsShowAskPopup] = useState(false);
+  const history = useHistory();
+
+  const storeUser = user => {
+    setUser(user);
+    localStorage.setItem('user', JSON.stringify(user));
+  };
+
+  const logOut = () => {
+    setUser(null);
+    localStorage.removeItem('user');
+  };
+
+  const startEducation = () => {
+    if (!user) {
+      setIsShowAskPopup(true);
+    } else {
+      history.push('/personalAccount');
+    }
+  };
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    setUser(user);
+  }, []);
+
   return (
     <>
       <header>
         <div className="header__inner">
           <div className="header__top">
-            <div className="header__personalAccount">
-              <Auth />
-              <span className="header__personalAccountText">/</span>
-              <Register />
-              <button className="header__enterBtn">
-                <img src={group2people} alt="" />
-              </button>
-            </div>
+            {!user ? (
+              <div className="header__personalAccount">
+                <Auth setUser={storeUser} />
+                <span className="header__personalAccountText">/</span>
+                <Register setUser={storeUser} />
+              </div>
+            ) : (
+              <div className="header__personalAccount">
+                <span className="header__personalAccountText">{user.name}</span>
+                <button className="header__enterBtn">
+                  <img src={group2people} alt="" />
+                </button>
+                <span className="header__personalAccountText logout" onClick={logOut}>
+                  Выйти
+                </span>
+              </div>
+            )}
           </div>
           <div className="start-home">
             <div className="header__logo">
@@ -35,7 +73,9 @@ export const Home = () => {
             </span>
           </div>
           <div className="main__button">
-            <button className="main__buttonStartLearn">Начать обучение</button>
+            <button className="main__buttonStartLearn" onClick={startEducation}>
+              Начать обучение
+            </button>
           </div>
         </div>
       </header>
@@ -93,6 +133,13 @@ export const Home = () => {
         </div>
         <Slider />
       </main>
+      {isShowAskPopup && (
+        <AskForLoginPopup
+          onClose={() => {
+            setIsShowAskPopup(false);
+          }}
+        />
+      )}
     </>
   );
 };

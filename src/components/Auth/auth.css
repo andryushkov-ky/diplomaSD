@@ -24,3 +24,10 @@
   width: 100%;
   text-align: center;
 }
+
+.notFoundUser {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}

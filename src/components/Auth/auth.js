@@ -3,11 +3,12 @@ import axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import './auth.css';
 
-export const Auth = () => {
-  const [isRegister, setIsRegister] = useState(false);
+export const Auth = ({ setUser }) => {
+  const [isAuth, setIsAuth] = useState(false);
+  const [isNotFound, setIsNotFound] = useState(false);
 
   const toggleRegister = () => {
-    setIsRegister(!isRegister);
+    setIsAuth(!isAuth);
   };
 
   return (
@@ -16,7 +17,7 @@ export const Auth = () => {
         Войти
       </span>
 
-      {isRegister && (
+      {isAuth && (
         <div className="registerBG">
           <div className="popUpEnter">
             <div className="formEnter">
@@ -25,7 +26,7 @@ export const Auth = () => {
                 <button
                   className="form-closeButtonRegistration"
                   onClick={() => {
-                    setIsRegister(false);
+                    setIsAuth(false);
                   }}
                 ></button>
               </div>
@@ -49,6 +50,13 @@ export const Auth = () => {
                       .post(`/api/getUser`, values)
                       .then(response => {
                         console.log('RESP', response.data);
+                        const user = response.data[0];
+                        if (user) {
+                          setUser(user);
+                          setIsAuth(false);
+                        } else {
+                          setIsNotFound(true);
+                        }
                       })
                       .finally(() => {
                         setSubmitting(false);
@@ -94,6 +102,9 @@ export const Auth = () => {
                       >
                         Войти
                       </button>
+                      {isNotFound && (
+                        <div className="notFoundUser">Такой пользователь не найден</div>
+                      )}
                     </Form>
                   )}
                 </Formik>
@@ -103,9 +114,9 @@ export const Auth = () => {
           <div
             className="clickOutsideCatcher"
             onClick={() => {
-              setIsRegister(false);
+              setIsAuth(false);
             }}
-          ></div>
+          />
         </div>
       )}
     </>

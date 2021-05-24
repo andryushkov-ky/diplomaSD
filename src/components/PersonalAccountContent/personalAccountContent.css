@@ -1,0 +1,146 @@
+.PersonalAccountContent-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.main__personalAccount{
+  background: #f2f6ff;
+}
+.main__container-inner{
+  padding: 50px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.main__container-content{
+  padding-bottom: 50px;
+}
+.main__img-content{
+  width: 300px;
+  height: 250px;
+  margin-right: 32px;
+  margin-bottom: 24px;
+  background: #ffffff;
+  border: 2px solid silver;
+  border-radius: 16px;
+  box-shadow: 0 0 15px 1px #454545;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.main__title-content{
+  text-align: center;
+  color: #6e6e6e;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  text-shadow: 0px 3px 5px #848586;
+  padding-bottom: 20px;
+}
+.main__img-inner{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.main__Picture{
+  width: 100%;
+  height:  100%;
+  object-fit:cover;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+.main__progress-container{
+  margin: 0 50px;
+  width: 200px;
+  height: 20px;
+  background-color: #cacaca;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: 0 0 10px 1px #454545;
+}
+.main__progress-bar{
+  position: absolute;
+  height: 100%;
+  background-color: #43bc02;
+  animation: progress-animation 5s forwards;
+  border-radius: 16px;
+}
+@keyframes progress-animation {
+  0%{width: 0%;}
+  100%{width: 100%;}
+}
+.main {
+  margin: 0 15%;
+  padding: 50px 30px;
+  background: #f2f6ff;
+}
+
+.main__Section {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.main__text {
+  font-family: "TT Norms Pro", "Arial", sans-serif;
+  padding: 10px 30px;
+  font-size: 1.5em;
+  align-self: center;
+  letter-spacing: 0.5px;
+  line-height: 40px;
+  color: #000000;
+}
+.main__title{
+  padding-left: 20px;
+  font-size: 1.8em;
+  padding-bottom: 20px;
+  color: #2d2c2c;
+}
+.main__image {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.main__img {
+  width: 100px;
+  height: 150px;
+  cursor: pointer;
+}
+.main__img:last-child {
+  width: 200px;
+  height: 150px;
+  cursor: pointer;
+}
+.main__button {
+  display: flex;
+  justify-content: center;
+}
+
+.main__buttonStartLearn {
+  width:300px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 16px;
+  background: #002eb3;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border:2px solid #002eb3 ;
+  box-shadow: 1px 1px 10px 1px #0a77f5;
+  margin-top: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.main__buttonStartLearn:hover {
+  transition:.5s;
+  transform: scale(1.1);
+  background: #1c992f;
+  border:2px solid #578f05;
+  box-shadow: 1px 1px 10px 1px #44b703;
+}

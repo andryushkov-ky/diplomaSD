@@ -37,3 +37,12 @@ body {
 .linkStyle {
   text-decoration: none;
 }
+.needToLogin {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  top: 100px;
+  font-size: 20px;
+}

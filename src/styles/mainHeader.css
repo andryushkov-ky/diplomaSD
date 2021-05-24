@@ -36,6 +36,10 @@
   color: #01ce51;
 }
 
+.logout {
+  margin-left: 15px;
+}
+
 .header__enterBtnStart {
   width: 60px;
   height: 60px;
