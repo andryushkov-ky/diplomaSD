@@ -40,7 +40,7 @@ export const RouterComponent = () => {
         <>
           <Route path="/personalAccount">
             <Header user={user} logOut={logOut} />
-            <PersonalAccountContent />
+            <PersonalAccountContent user={user} />
             <Footer />
           </Route>
           <Route exact path="/aboutHTML">

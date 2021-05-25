@@ -46,10 +46,10 @@
   border: 2px solid #002eb3;
   box-shadow: 1px 1px 10px 1px #0a77f5;
   cursor: pointer;
+  margin-top: 5px;
 }
 .form-button:hover {
   transition: 0.5s;
-  transform: scale(1.1);
   background: #1c992f;
   border: 2px solid #578f05;
   box-shadow: 1px 1px 10px 1px #44b703;
@@ -66,9 +66,6 @@
 .footer-message-button:hover {
   filter: contrast(200%);
 }
-.form-item {
-  padding-bottom: 20px;
-}
 .form-input {
   box-sizing: border-box;
   padding: 5px 15px;
@@ -81,8 +78,6 @@
 }
 .form-input:focus {
   transition: 0.5s;
-  transform: scale(1.1);
-  border: 2px solid #578f05;
   box-shadow: 1px 1px 10px 1px #44b703;
 }
 .footer-question {
@@ -107,6 +102,16 @@ textarea:focus {
   border: 2px solid #578f05;
   box-shadow: 1px 1px 10px 1px #44b703;
 }
+
+.contactUs_send {
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: underline;
+  color: #00ffbd;
+  padding: 0 50px;
+  line-height: 25px;
+}
+
 @media (min-width: 320px) and (max-width: 768px) {
   .footer-content {
     display: flex;
@@ -127,7 +132,7 @@ textarea:focus {
     position: absolute;
     border-right: 2px solid white;
     width: 4px;
-    height: 440px;
+    height: 100%;
     top: 0;
     right: 0;
   }

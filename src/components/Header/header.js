@@ -16,7 +16,9 @@ export const Header = ({ user, logOut }) => {
         <div className="header__personalAccount">
           <span className="header__personalAccountText">{user.name}</span>
           <button className="header__enterBtn">
-            <img src={group} alt="" />
+            <Link to={'/personalAccount'}>
+              <img src={group} alt="" />
+            </Link>
           </button>
           <span className="header__personalAccountText logout" onClick={logOut}>
             Выйти

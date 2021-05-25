@@ -98,8 +98,32 @@ app.post('/api/getUserProgress', jsonParser, (req, res) => {
   getUserProgress(req.body, res);
 });
 
-function getUserProgress() {
+app.post('/api/postContactInfo', jsonParser, (req, res) => {
+  postContactInfo(req.body, res);
+});
 
+function postContactInfo(data, res) {
+  const { email, name, text } = data;
+
+  const sql = `INSERT INTO contact (name, email, text) VALUES ('${name}', '${email}', '${text}')`;
+
+  con.query(sql, function (err, result, fields) {
+    console.log('err', err);
+    res.send(result);
+  });
+}
+
+function getUserProgress(data, res) {
+  const { idUser } = data;
+
+  con.query(
+    `SELECT * FROM progress WHERE idUser = '${idUser}'`,
+    function (err, result, fields) {
+      const progress = result[0] || null;
+      console.log('Return progress', progress);
+      res.send(progress);
+    }
+  );
 }
 
 function updateChaptersProgress(data, res) {

@@ -36,12 +36,11 @@ export const Register = ({ setUser }) => {
                     const errors = {};
                     if (!values.email) {
                       errors.email = 'Поле должно быть заполнено!';
+                    } else if (
+                      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+                    ) {
+                      errors.email = 'Некорректный email';
                     }
-                    // else if (
-                    //   !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-                    // ) {
-                    //   errors.email = 'Некорректный email';
-                    // }
 
                     if (!values.name) {
                       errors.name = 'Поле должно быть заполнено!';
@@ -53,13 +52,15 @@ export const Register = ({ setUser }) => {
 
                     if (!values.password) {
                       errors.password = 'Поле должно быть заполнено!';
+                    } else if (
+                      values.password.length < 6
+                    ) {
+                      errors.password = 'Пароль слишком короткий, используйте минимум 6 символов';
                     }
 
                     return errors;
                   }}
                   onSubmit={(values, { setSubmitting }) => {
-                    console.error('VALUES', values);
-
                     axios
                       .post(`/api/createUser`, values)
                       .then(response => {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import group2people from '../../assets/imgs/Group 2people.svg';
 import group1 from '../../assets/imgs/Group 1.svg';
 import group2 from '../../assets/imgs/Group 2.svg';
@@ -55,7 +55,9 @@ export const Home = () => {
               <div className="header__personalAccount">
                 <span className="header__personalAccountText">{user.name}</span>
                 <button className="header__enterBtn">
-                  <img src={group2people} alt="" />
+                  <Link to={'/personalAccount'}>
+                    <img src={group2people} alt="" />
+                  </Link>
                 </button>
                 <span className="header__personalAccountText logout" onClick={logOut}>
                   Выйти
