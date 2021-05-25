@@ -51,7 +51,7 @@ export const RouterComponent = () => {
           <Route exact path="/aboutHTML/HTML_1.0">
             <Header user={user} logOut={logOut} />
             <div className="contentPage">
-              <Page {...HTMLpageConstructor['HTML_1.0']} />
+              <Page user={user} {...HTMLpageConstructor['HTML_1.0']} />
               <Sidebar active={'html1'} links={contentMap.aboutHTML.parts} />
             </div>
             <Footer />
@@ -59,7 +59,7 @@ export const RouterComponent = () => {
           <Route exact path="/aboutHTML/HTML_1.1">
             <Header user={user} logOut={logOut} />
             <div className="contentPage">
-              <Page {...HTMLpageConstructor['HTML_1.1']} />
+              <Page user={user} {...HTMLpageConstructor['HTML_1.1']} />
               <Sidebar active={'html2'} links={contentMap.aboutHTML.parts} />
             </div>
             <Footer />
@@ -67,7 +67,7 @@ export const RouterComponent = () => {
           <Route exact path="/aboutHTML/HTML_1.2">
             <Header user={user} logOut={logOut} />
             <div className="contentPage">
-              <Page {...HTMLpageConstructor['HTML_1.2']} />
+              <Page user={user} {...HTMLpageConstructor['HTML_1.2']} />
               <Sidebar active={'html3'} links={contentMap.aboutHTML.parts} />
             </div>
             <Footer />
@@ -75,7 +75,7 @@ export const RouterComponent = () => {
           <Route exact path="/aboutHTML/HTML_1.3">
             <Header user={user} logOut={logOut} />
             <div className="contentPage">
-              <Page {...HTMLpageConstructor['HTML_1.3']} />
+              <Page user={user} {...HTMLpageConstructor['HTML_1.3']} />
               <Sidebar active={'html4'} links={contentMap.aboutHTML.parts} />
             </div>
             <Footer />
@@ -83,14 +83,14 @@ export const RouterComponent = () => {
           <Route exact path="/aboutHTML/HTML_1.4">
             <Header user={user} logOut={logOut} />
             <div className="contentPage">
-              <Page {...HTMLpageConstructor['HTML_1.4']} />
+              <Page user={user} {...HTMLpageConstructor['HTML_1.4']} />
               <Sidebar active={'html5'} links={contentMap.aboutHTML.parts} />
             </div>
             <Footer />
           </Route>
           <Route exact path="/aboutHTML/HTML_test">
             <Header user={user} logOut={logOut} />
-            <Test title={'Тест на знание HTML'} questions={HTMLquestions} />
+            <Test id={'aboutHTML'} user={user} title={'Тест на знание HTML'} questions={HTMLquestions} />
             <Footer />
           </Route>
         </>

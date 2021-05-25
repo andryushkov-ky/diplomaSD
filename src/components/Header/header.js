@@ -2,9 +2,9 @@ import React from 'react';
 import logo from '../../assets/imgs/logo.svg';
 import group from '../../assets/imgs/Group 2people.svg';
 import './header.css';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-export const Header = ({ logOut }) => {
+export const Header = ({ user, logOut }) => {
   return (
     <header className="header__innerAccount">
       <div className="header__Account">
@@ -13,12 +13,15 @@ export const Header = ({ logOut }) => {
             <img src={logo} className="header__logoImg" alt="" />
           </Link>
         </div>
-        <span className="header__personalAccountText logout" onClick={logOut}>
-          Выход
-        </span>
-        <button className="header__exitBtn">
-          <img src={group} alt="" />
-        </button>
+        <div className="header__personalAccount">
+          <span className="header__personalAccountText">{user.name}</span>
+          <button className="header__enterBtn">
+            <img src={group} alt="" />
+          </button>
+          <span className="header__personalAccountText logout" onClick={logOut}>
+            Выйти
+          </span>
+        </div>
       </div>
     </header>
   );

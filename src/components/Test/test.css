@@ -70,10 +70,7 @@
   cursor: not-allowed;
 }
 
-
-
 .res_wrapper {
-
 }
 
 .res_quest_num {
@@ -108,7 +105,9 @@
   font-weight: 600;
 }
 
-.res_green, .res_red, .res_black {
+.res_green,
+.res_red,
+.res_black {
   padding-top: 5px;
   padding-left: 10px;
 }
@@ -130,4 +129,13 @@
 
 .res_restart:hover {
   background: #003380b8;
+}
+
+.res_wrap_btns {
+  display: flex;
+}
+
+.res_go_next {
+  background: green !important;
+  text-decoration: none;
 }

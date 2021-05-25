@@ -3,11 +3,6 @@ import './askForLoginPopup.css';
 
 export const AskForLoginPopup = ({ onClose }) => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
-  const [isNotFound, setIsNotFound] = useState(false);
-
-  const togglePopup = () => {
-    setIsPopupVisible(!isPopupVisible);
-  };
 
   return (
     <>

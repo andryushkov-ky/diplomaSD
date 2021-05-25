@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './test.css';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-export const Test = ({ questions, title }) => {
+export const Test = ({ questions, title, user, id }) => {
+  const [isTestComplete, setIsTestComplete] = useState(false);
   const [round, setRound] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -20,6 +23,14 @@ export const Test = ({ questions, title }) => {
       setRound(round + 1);
     } else {
       setShowResults(true);
+
+      if (!isTestComplete) {
+        console.log('Send', { idUser: user.id, testId: id });
+        axios
+          .post(`/api/updateTestsProgress`, { idUser: user.id, testId: id })
+          .finally(() => {});
+        setIsTestComplete(true);
+      }
     }
   };
 
@@ -60,8 +71,17 @@ export const Test = ({ questions, title }) => {
               </div>
             );
           })}
-          <div className={'res_restart'} onClick={restart}>
-            Пройти тест заново
+          <div className={'res_wrap_btns'}>
+            <div className={'res_restart'} onClick={restart}>
+              Пройти тест заново
+            </div>
+            <Link
+              to={'/personalAccount'}
+              className={'res_restart res_go_next'}
+              onClick={restart}
+            >
+              Мой прогресс
+            </Link>
           </div>
         </>
       ) : (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import group1 from '../../assets/imgs/Group 1.svg';
 import group2 from '../../assets/imgs/Group 2.svg';
 import group3 from '../../assets/imgs/Group 3.svg';
@@ -58,6 +58,11 @@ const Block = ({ link, img, label }) => {
 };
 
 export const PersonalAccountContent = () => {
+  useEffect(() => {
+
+  }, []);
+
+
   return (
     <div className="PersonalAccountContent-wrapper">
       {blockList.map(item => {

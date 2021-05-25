@@ -67,6 +67,9 @@ export const HTMLpageConstructor = {
       link: '/aboutHTML/HTML_1.1',
       text: 'Следующий урок',
     },
+    pageId: 'html1',
+    chapterId: 'aboutHTML',
+    totalPages: 5,
     content: () => <Html1 />,
   },
   'HTML_1.1': {
@@ -78,6 +81,9 @@ export const HTMLpageConstructor = {
       link: '/aboutHTML/HTML_1.2',
       text: 'Следующий урок',
     },
+    pageId: 'html2',
+    chapterId: 'aboutHTML',
+    totalPages: 5,
     content: () => <Html2 />,
   },
   'HTML_1.2': {
@@ -89,6 +95,9 @@ export const HTMLpageConstructor = {
       link: '/aboutHTML/HTML_1.3',
       text: 'Следующий урок',
     },
+    pageId: 'html3',
+    chapterId: 'aboutHTML',
+    totalPages: 5,
     content: () => <Html3 />,
   },
   'HTML_1.3': {
@@ -100,6 +109,9 @@ export const HTMLpageConstructor = {
       link: '/aboutHTML/HTML_1.4',
       text: 'Следующий урок',
     },
+    pageId: 'html4',
+    chapterId: 'aboutHTML',
+    totalPages: 5,
     content: () => <Html4 />,
   },
   'HTML_1.4': {
@@ -111,6 +123,9 @@ export const HTMLpageConstructor = {
       link: '/aboutHTML',
       text: 'Перейти к разделу',
     },
+    pageId: 'html5',
+    chapterId: 'aboutHTML',
+    totalPages: 5,
     content: () => <Html5 />,
   },
 };
